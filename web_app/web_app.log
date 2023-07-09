@@ -1,0 +1,5 @@
+{"level":"DEBUG","time":"2023-07-09T22:28:03.347+0800","caller":"web_app/main.go:36","msg":"logger init success..."}
+{"level":"INFO","time":"2023-07-09T22:28:03.356+0800","caller":"web_app/main.go:65","msg":"Server exiting"}
+{"level":"INFO","time":"2023-07-09T22:28:15.182+0800","caller":"logger/logger.go:71","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67","errors":"","cost":0}
+{"level":"INFO","time":"2023-07-09T22:37:02.827+0800","caller":"web_app/main.go:75","msg":"Shutdown Server ..."}
+{"level":"FATAL","time":"2023-07-09T22:37:02.827+0800","caller":"web_app/main.go:62","msg":"listen:%s\n","error":"http: Server closed"}
