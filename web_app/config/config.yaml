@@ -1,7 +1,7 @@
-app:
-  name: "web_app"
-  mode: "dev"
-  port: 8080
+name: "web_app"
+mode: "dev"
+port: 8080
+version: "v0.2"
 
 log:
   level: "debug"
@@ -12,16 +12,16 @@ log:
 
 mysql:
   host: "127.0.0.1"
-  port: 3306
+  port: 8086
   user: "root"
   password: "1127"
-  dbname: "db1"
+  dbname: "camps_user"
   max_open_conns: 30
   max_idle_conns: 10
 
 redis:
   host: "127.0.0.1"
-  port: 6379
+  port: 8089
   db: 0
   pool_size: 10
   password: ""

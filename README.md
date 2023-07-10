@@ -11,3 +11,8 @@
 - model：模型
 - pkg：第三方库
 - router：路由
+
+## Docker 启动MySQL、Redis
+
+- 启动MySQL：
+- 启动Redis：`docker exec -it 5850b660dab6 redis-cli -h 0.0.0.0 -p 6379`

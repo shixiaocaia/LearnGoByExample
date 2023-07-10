@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"go_example/web_app/Dao/mysql"
 	"go_example/web_app/Dao/redis"
@@ -27,7 +26,7 @@ func main() {
 	}
 
 	//2. 初始化日志
-	if err := logger.Init(); err != nil {
+	if err := logger.Init(settings.Conf.LogConfig); err != nil {
 		fmt.Printf("init logger failed, err:%v\n", err)
 		return
 	}
@@ -36,13 +35,13 @@ func main() {
 	zap.L().Debug("logger init success...")
 
 	//3. 初始化MySQL连接
-	if err := mysql.Init(); err != nil {
+	if err := mysql.Init(settings.Conf.MySQLConfig); err != nil {
 		fmt.Printf("init mysql failed, err:%v\n", err)
 		return
 	}
 	defer mysql.Close()
 	//4. 初始化Redis连接
-	if err := redis.Init(); err != nil {
+	if err := redis.Init(settings.Conf.RedisConfig); err != nil {
 		fmt.Printf("init redis failed, err:%v\n", err)
 		return
 	}
@@ -52,7 +51,7 @@ func main() {
 
 	//6. 启动服务（优雅关闭)
 	srv := &http.Server{
-		Addr:    fmt.Sprintf(":%s", viper.GetString("app.port")),
+		Addr:    fmt.Sprintf(":%d", settings.Conf.Port),
 		Handler: r,
 	}
 

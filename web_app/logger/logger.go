@@ -5,6 +5,7 @@ import (
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+	"go_example/web_app/settings"
 	"gopkg.in/natefinch/lumberjack.v2"
 	"net"
 	"net/http"
@@ -16,12 +17,12 @@ import (
 )
 
 // InitLogger 初始化Logger
-func Init() (err error) {
+func Init(cfg *settings.LogConfig) (err error) {
 	writeSyncer := getLogWriter(
-		viper.GetString("log.filename"),
-		viper.GetInt("log.max_size"),
-		viper.GetInt("log.max_backups"),
-		viper.GetInt("log.max_age"),
+		cfg.Filename,
+		cfg.MaxSize,
+		cfg.MaxBackUp,
+		cfg.MaxAge,
 	)
 
 	encoder := getEncoder()
