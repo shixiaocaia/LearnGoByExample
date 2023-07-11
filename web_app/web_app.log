@@ -60,3 +60,10 @@
 {"level":"INFO","time":"2023-07-11T20:45:29.870+0800","caller":"logger/logger.go:72","msg":"/version","status":200,"method":"GET","path":"/version","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.79","errors":"","cost":0}
 {"level":"INFO","time":"2023-07-11T20:45:40.939+0800","caller":"web_app/main.go:74","msg":"Shutdown Server ..."}
 {"level":"FATAL","time":"2023-07-11T20:45:40.939+0800","caller":"web_app/main.go:61","msg":"listen:%s\n","error":"http: Server closed"}
+{"level":"DEBUG","time":"2023-07-11T21:00:33.998+0800","caller":"web_app/main.go:35","msg":"logger init success..."}
+{"level":"INFO","time":"2023-07-11T21:00:34.029+0800","caller":"web_app/main.go:64","msg":"Server exiting"}
+{"level":"INFO","time":"2023-07-11T21:00:41.517+0800","caller":"logger/logger.go:72","msg":"/","status":404,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.79","errors":"","cost":0}
+{"level":"INFO","time":"2023-07-11T21:00:41.647+0800","caller":"logger/logger.go:72","msg":"/favicon.ico","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.79","errors":"","cost":0}
+{"level":"INFO","time":"2023-07-11T21:00:46.322+0800","caller":"logger/logger.go:72","msg":"/version","status":200,"method":"GET","path":"/version","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.79","errors":"","cost":0}
+{"level":"INFO","time":"2023-07-11T21:00:50.391+0800","caller":"web_app/main.go:74","msg":"Shutdown Server ..."}
+{"level":"FATAL","time":"2023-07-11T21:00:50.391+0800","caller":"web_app/main.go:61","msg":"listen:%s\n","error":"http: Server closed"}
