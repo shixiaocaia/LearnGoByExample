@@ -60,6 +60,7 @@ func Init() (err error) {
 	}
 
 	viper.WatchConfig()
+	// 回调机制，重新加载配置文件
 	viper.OnConfigChange(func(in fsnotify.Event) {
 		fmt.Println("配置文件修改了...")
 		if err := viper.Unmarshal(Conf); err != nil {

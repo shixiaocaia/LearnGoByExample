@@ -14,5 +14,5 @@
 
 ## Docker 启动MySQL、Redis
 
-- 启动MySQL：
-- 启动Redis：`docker exec -it 5850b660dab6 redis-cli -h 0.0.0.0 -p 6379`
+- 启动MySQL：`docker run -it --network=host mysql:8.0 mysql -h 0.0.0.0 camps_user -P 8086 -u root -p`
+- 启动Redis：`docker exec -it 9268f9f58b0a redis-cli -h 0.0.0.0 -p 6379`
