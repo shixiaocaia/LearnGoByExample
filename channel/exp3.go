@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+// channel 实现一个互斥器
+
 type Mutex struct {
 	ch chan struct{}
 }
