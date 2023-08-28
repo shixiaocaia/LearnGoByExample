@@ -10,3 +10,6 @@ exp3.go
 
 exp4.go
 - 实现两个协程轮流输出A-1, B-2, C-3
+
+exp5.go
+- N个goroutine循环打印数字min ~ max范围的数字
