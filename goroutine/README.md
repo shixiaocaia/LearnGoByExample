@@ -13,3 +13,8 @@ exp4.go
 
 exp5.go
 - N个goroutine循环打印数字min ~ max范围的数字
+
+exp6.go
+- goroutine的创建过程，g是如何存放，如何调度的
+- 在GMP模型中，P起到了重要作用，负责G和M之间调度
+  - 当前G阻塞，将P转到其他闲置或者新建M继续执行
