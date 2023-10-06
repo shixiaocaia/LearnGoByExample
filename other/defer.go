@@ -15,6 +15,7 @@ func test1() (result int) {
 		}
 		return
 	*/
+	// result = 1
 }
 
 func test2() (r int) {
@@ -26,9 +27,9 @@ func test2() (r int) {
 
 	/*
 		t := 5
-		r = t // 看到最后return t
+		r = t           // 看到最后return t
 		defer func(){
-			t = t + 5 // 值传递，不改变r
+			t = t + 5   // 值传递，不改变 r
 		}()
 		return
 	*/
@@ -47,7 +48,29 @@ func test3() (r int) {
 		}(r)
 		return
 
-		// NOTE 如果这里不是传参，直接 r + 5,就是对非匿名返回值修改
+		// NOTE 如果这里不是传参，直接 r + 5,就是对非匿名返回值修改，对比test1
+	*/
+}
+
+func test4() int {
+	i := 0
+	defer func() {
+		fmt.Println("defer1")
+	}()
+	defer func() {
+		i += 1
+		fmt.Println("defer2")
+	}()
+	return i
+	// defer函数的顺序后入先出，类似堆栈，先输出defer2，再输出defer1
+	// 返回值是匿名返回值，不影响
+
+	/*
+		i := 0
+		defer func(){
+		 i += 1
+		}()
+		return 1
 	*/
 }
 
@@ -55,4 +78,6 @@ func main() {
 	fmt.Println(test1())
 	fmt.Println(test2())
 	fmt.Println(test3())
+
+	fmt.Println(test4())
 }
