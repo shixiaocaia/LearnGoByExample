@@ -15,4 +15,5 @@ func main() {
 	i[2] = 100
 	fmt.Println(j[0])
 	fmt.Printf("j[0]: %p, i[2]: %p", &j[0], &i[2])
+
 }
