@@ -74,10 +74,23 @@ func test4() int {
 	*/
 }
 
-func main() {
-	fmt.Println(test1())
-	fmt.Println(test2())
-	fmt.Println(test3())
+func test5(a int) int {
+	var b int
+	defer func() {
+		a++
+		b++
+	}()
 
-	fmt.Println(test4())
+	a++
+	b = a
+	return b
+}
+func main() {
+	//fmt.Println(test1())
+	//fmt.Println(test2())
+	//fmt.Println(test3())
+
+	//fmt.Println(test4())
+
+	fmt.Println(test5(1))
 }
