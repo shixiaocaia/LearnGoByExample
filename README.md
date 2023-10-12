@@ -29,6 +29,9 @@ exp6.go:
 
 exp7.go: 使用两个协程交替输出奇数偶数
 
+exp8.go: 使用两个 goroutine 交替打印序列，一个 goroutine 打印数字， 另外一个 goroutine 打印字母， 最终效果如下：
+`12AB34CD56EF78GH910IJ1112KL1314MN1516OP1718QR1920ST2122UV2324WX2526YZ2728`
+
 ## other
 - defer.go: 输出顺序，返回值修改
 - interface.go: 类型的比较，interface类型只有值和类型都为nil，才为nil
