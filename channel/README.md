@@ -1,3 +1,0 @@
-- exp1.go ---channel本质是值的拷贝
-- exp2.go ---使用channel实现一个限流器
-- exp3.go ---使用channel实现一个互斥锁
