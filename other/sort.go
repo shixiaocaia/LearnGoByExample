@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 // bubbleSort 冒泡排序
 func bubbleSort(nums []int) {
@@ -14,7 +17,7 @@ func bubbleSort(nums []int) {
 			}
 		}
 	}
-	fmt.Println("冒泡排序结果：", nums)
+	//fmt.Println("冒泡排序结果：", nums)
 }
 
 // selectSort 选择排序
@@ -29,7 +32,7 @@ func selectSort(nums []int) {
 			}
 		}
 	}
-	fmt.Println("选择排序结果：", nums)
+	//fmt.Println("选择排序结果：", nums)
 }
 
 // insertSort 插入排序
@@ -49,13 +52,51 @@ func insertSort(nums []int) {
 		// tmp大于当前数，插入到当前数后面
 		nums[j+1] = tmp
 	}
-	fmt.Println("插入排序结果：", nums)
+	//fmt.Println("插入排序结果：", nums)
+}
+func quickSort(nums []int, left, right int) {
+	if left >= right {
+		return
+	}
+
+	povit := partition(nums, left, right)
+	povitl := povit - 1
+	for povitl > 0 && nums[povitl] == nums[povitl+1] {
+		povitl--
+	}
+	quickSort(nums, left, povitl)
+	povitr := povit + 1
+	for povitr < len(nums) && nums[povitr] == nums[povitr-1] {
+		povitr++
+	}
+	quickSort(nums, povitr, right)
+}
+
+func partition(nums []int, left, right int) int {
+	pivotIndex := rand.Intn(right-left) + left
+	pivot := nums[pivotIndex]
+	// pivot 完整遍历下
+	nums[pivotIndex], nums[right] = nums[right], nums[pivotIndex]
+	for i := left; i < right; i++ {
+		if nums[i] < pivot {
+			nums[i], nums[left] = nums[left], nums[i]
+			left++
+		}
+	}
+	//fmt.Println(nums)
+	// 调整pivot位置
+	nums[left], nums[right] = nums[right], nums[left]
+	//fmt.Println(nums, pivotIndex)
+	return left
 }
 
 func main() {
-	nums := []int{4, 2, 3, 5, 6, 10}
+	nums := []int{5, 1, 1, 2, 0, 0}
+	fmt.Println("before sort: ", nums)
+	//bubbleSort(nums)
+	//selectSort(nums)
+	//insertSort(nums)
+	quickSort(nums, 0, len(nums)-1)
 
-	bubbleSort(nums)
-	selectSort(nums)
-	insertSort(nums)
+	fmt.Println("after sort: ", nums)
 }

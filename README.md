@@ -4,9 +4,15 @@ Hello World.
 
 ## channel
 
-- exp1.go: channel本质是值的拷贝
-- exp2.go: 使用channel实现一个限流器
-- exp3.go: 使用channel实现一个互斥锁
+exp1.go: channel本质是值的拷贝
+
+exp2.go: 使用channel实现一个限流器
+
+exp3.go: 使用channel实现一个互斥锁
+
+exp4.go: go select使用
+
+exp5.go: 判断channel情况
 
 ## goroutine
 
@@ -33,8 +39,11 @@ exp8.go: 使用两个 goroutine 交替打印序列，一个 goroutine 打印数�
 `12AB34CD56EF78GH910IJ1112KL1314MN1516OP1718QR1920ST2122UV2324WX2526YZ2728`
 
 ## other
-- defer.go: 输出顺序，返回值修改
-- interface.go: 类型的比较，interface类型只有值和类型都为nil，才为nil
-- sort.go: 经典排序算法
-- string1.go: 请实现一个算法，确定一个字符串的所有字符【是否全都不同】。这里我们要求【不允许使用额外的存储结构】。
+defer.go: 输出顺序，返回值修改
+
+interface.go: 类型的比较，interface类型只有值和类型都为nil，才为nil
+
+sort.go: 经典排序算法
+
+string1.go: 请实现一个算法，确定一个字符串的所有字符【是否全都不同】。这里我们要求【不允许使用额外的存储结构】。
   - 判断两个给定的字符串排序后是否一致，同这一题，可以判断两个字符串中同一个字符的个数是否相同
