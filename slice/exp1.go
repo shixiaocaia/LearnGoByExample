@@ -14,23 +14,31 @@ func main() {
 	// 在末尾地址追加的位置还在s内，修改影响到了原s
 	doAppend(s[:4])
 	printLengthAndCapacity(s)
+	fmt.Println("---------------------------")
+
+	doAppend(s)
+	printLengthAndCapacity(s)
 	// 接着对len = 8, cap = 8的切片append，超过cap，发生扩容
 	// 没有大于扩容前cap的两倍，变成扩容前两倍容量
-	doAppend(s)
-	// 发生值拷贝
-	printLengthAndCapacity(s)
+	// 扩容, 发生值拷贝
+	fmt.Println("---------------------------")
 
 	slice := make([]int, 0, 2)
 	fmt.Printf("slice len = %d, cap = %d, addr = %p\n", len(slice), cap(slice), &slice)
+	slice = append(slice, 1)
+	fmt.Printf("after append, slice len = %d, cap = %d, addr = %p\n", len(slice), cap(slice), &slice)
+	fmt.Println("---------------------------")
 
 	// append会产生一个新slice
 	slice1 := append(slice, 1)
 	fmt.Printf("slice1, len = %d, cap = %d, addr = %p\n", len(slice1), cap(slice1), &slice1)
+	fmt.Println("---------------------------")
 
 	// 完全复制一个slice，分配到不同的内存空间
 	sliceCopy := make([]int, len(slice1))
 	copy(sliceCopy, slice)
 	fmt.Printf("slice1 addr = %p, sliceCopy addr = %p", &slice1, &sliceCopy)
+	fmt.Println("---------------------------")
 }
 
 func printLengthAndCapacity(s []int) {
