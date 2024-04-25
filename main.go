@@ -1,40 +1,33 @@
-// maxPointsOnLine.go
-
 package main
 
 import (
 	"fmt"
-	"math"
+	"github.com/panjf2000/ants/v2"
+	"sync"
 )
 
-func main() {
-	//读入
-	nums := []int{2, 3, 4, 2, 5, 10}
-	m := 4
-
-	// 每个位置最大值，后续min比较
-	dp := make([]int, m+1)
-	for i := 1; i <= m; i++ {
-		dp[i] = math.MaxInt32
-	}
-
-	// 组合
-	for i := 0; i < len(nums); i++ {
-		for j := m; j >= nums[i]; j-- {
-			// 倒叙遍历，保证只取一次
-			dp[j] = min(dp[j], dp[j-nums[i]]+1)
+func wrapper(i int, wg *sync.WaitGroup) func() {
+	return func() {
+		fmt.Printf("hello from task:%d\n", i)
+		if i%2 == 0 {
+			panic(fmt.Sprintf("panic from task:%d", i))
 		}
-	}
-	if dp[m] == math.MaxInt32 {
-		fmt.Println("no solution")
-	} else {
-		fmt.Println(dp[m])
+		wg.Done()
 	}
 }
 
-func min(i, j int) int {
-	if i < j {
-		return i
+func main() {
+	p, _ := ants.NewPool(2)
+	defer p.Release()
+
+	var wg sync.WaitGroup
+	wg.Add(3)
+	for i := 1; i <= 2; i++ {
+		p.Submit(wrapper(i, &wg))
 	}
-	return j
+
+	//time.Sleep(1 * time.Second)
+	p.Submit(wrapper(3, &wg))
+	p.Submit(wrapper(5, &wg))
+	wg.Wait()
 }
