@@ -38,6 +38,17 @@ exp7.go: 使用两个协程交替输出奇数偶数
 exp8.go: 使用两个 goroutine 交替打印序列，一个 goroutine 打印数字， 另外一个 goroutine 打印字母， 最终效果如下：
 `12AB34CD56EF78GH910IJ1112KL1314MN1516OP1718QR1920ST2122UV2324WX2526YZ2728`
 
+## slice
+
+
+## leetcode
+
+- LRUCache
+
+- prefixTree
+
+- quickSort
+
 ## other
 defer.go: 输出顺序，返回值修改
 
@@ -47,3 +58,5 @@ sort.go: 经典排序算法
 
 string1.go: 请实现一个算法，确定一个字符串的所有字符【是否全都不同】。这里我们要求【不允许使用额外的存储结构】。
   - 判断两个给定的字符串排序后是否一致，同这一题，可以判断两个字符串中同一个字符的个数是否相同
+
+gmp1.go

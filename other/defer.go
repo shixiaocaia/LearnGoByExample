@@ -18,6 +18,7 @@ func test1() (result int) {
 	// result = 1
 }
 
+
 func test2() (r int) {
 	t := 5
 	defer func() {
@@ -81,10 +82,11 @@ func test5(a int) int {
 		b++
 	}()
 
-	a++
-	b = a
+	// a++
+	// b = a
 	return b
 }
+
 func main() {
 	//fmt.Println(test1())
 	//fmt.Println(test2())
@@ -92,5 +94,6 @@ func main() {
 
 	//fmt.Println(test4())
 
-	fmt.Println(test5(1))
+	//fmt.Println(test5(1))
+
 }
